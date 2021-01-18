@@ -1,0 +1,15 @@
+<div>
+    <h2>@ViewBag.Name</h2>
+</div>
+
+<h2>@Model.CurrentCategory</h2>
+
+@{ 
+    foreach (var product in Model.Products)
+    {
+        <div>
+            <h4>Product name: @product.Name</h4>
+            <p>Price: @product.Price.ToString("c")</p>
+        </div>
+    }
+}

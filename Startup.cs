@@ -10,6 +10,7 @@ using Polifloris.Data;
 using Polifloris.Data.Interfaces;
 using Polifloris.Data.Mocks;
 using Polifloris.Data.Repositories;
+using Polifloris.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +37,14 @@ namespace Polifloris
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sp => ShoppingCart.GetCart(sp));
+
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +57,7 @@ namespace Polifloris
 
             app.UseStatusCodePages();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 

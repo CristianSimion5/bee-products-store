@@ -1,0 +1,15 @@
+﻿@model Product
+
+
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="figure">
+        <img src="@Model.ImageThumbnailUrl" alt="Thumbnail of a product" class="figure-img img-thumbnail" />
+        <div class="figure-caption">
+            <h3 class="float-right">@Model.Price.ToString("c")</h3>
+            <h3>
+                <a href="#">@Model.Name</a>
+            </h3>
+            <p>@Model.Description</p>
+        </div>
+    </div>
+</div>

@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Polifloris.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Polifloris.Data
 {
@@ -15,5 +11,6 @@ namespace Polifloris.Data
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
     }
 }

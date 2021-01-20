@@ -18,8 +18,7 @@ namespace Polifloris.Data.Mocks
         {
             return new Product { 
                 Name = "Miere de salcâm",
-                ShortDescription = "Miere de salcâm",
-                LongDescription = "Miere de salcam provenita din Romania",
+                Description = "Miere de salcâm",
                 Price = 20,
                 ImageUrl = "~/images/miere_salcam.jpg",
                 ImageThumbnailUrl = "/images/thumbnails/miere_salcam_thn.jpg",
@@ -34,8 +33,7 @@ namespace Polifloris.Data.Mocks
             {
                 new Product { 
                     Name = "Miere de salcâm",
-                    ShortDescription = "Miere de salcâm",
-                    LongDescription = "Miere de salcam provenita din Romania",
+                    Description = "Miere de salcâm",
                     Price = 20,
                     ImageUrl = "~/images/miere_salcam.jpg",
                     ImageThumbnailUrl = "/images/thumbnails/miere_salcam_thn.jpg",
@@ -44,8 +42,7 @@ namespace Polifloris.Data.Mocks
                 },
                 new Product { 
                     Name = "Miere poliflora",
-                    ShortDescription = "Miere poliflora",
-                    LongDescription = "Miere poliflora provenita din Romania",
+                    Description = "Miere poliflora",
                     Price = 15,
                     ImageUrl = "~/images/miere_poliflora.jpg",
                     ImageThumbnailUrl = "/images/thumbnails/miere_poliflora_thn.jpg",
@@ -54,8 +51,7 @@ namespace Polifloris.Data.Mocks
                 },
                 new Product {
                     Name = "Miere de salcâm",
-                    ShortDescription = "Miere de salcâm",
-                    LongDescription = "Miere de salcam provenita din Romania",
+                    Description = "Miere de salcâm",
                     Price = 20,
                     ImageUrl = "~/images/miere_salcam.jpg",
                     ImageThumbnailUrl = "/images/thumbnails/miere_salcam_thn.jpg",
@@ -64,8 +60,7 @@ namespace Polifloris.Data.Mocks
                 },
                 new Product {
                     Name = "Miere de salcâm",
-                    ShortDescription = "Miere de salcâm",
-                    LongDescription = "Miere de salcam provenita din Romania",
+                    Description = "Miere de salcâm",
                     Price = 20,
                     ImageUrl = "~/images/miere_salcam.jpg",
                     ImageThumbnailUrl = "/images/thumbnails/miere_salcam_thn.jpg",

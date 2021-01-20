@@ -18,9 +18,11 @@ namespace Polifloris.Controllers
         public IActionResult List()
         {
             ViewBag.Name = "Toate produsele sunt afisate aici";
-            ProductListViewModel vm = new ProductListViewModel();
-            vm.Products = _productRepository.GetProducts();
-            vm.CurrentCategory = "Miere";
+            ProductListViewModel vm = new ProductListViewModel
+            {
+                Products = _productRepository.GetProducts(),
+                CurrentCategory = "Miere"
+            };
 
             return View(vm);
         }

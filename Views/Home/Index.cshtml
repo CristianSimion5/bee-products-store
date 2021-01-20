@@ -1,0 +1,12 @@
+﻿@model HomeViewModel
+
+@await Html.PartialAsync("_Carousel")
+
+<h2>Produse recomandate</h2>
+
+<div class="row">
+    @foreach (var product in Model.FeaturedProducts)
+    {
+        @await Html.PartialAsync("_ProductsSummary", product)
+    }
+</div>

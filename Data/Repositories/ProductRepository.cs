@@ -3,6 +3,7 @@ using Polifloris.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace Polifloris.Data.Repositories
@@ -14,6 +15,11 @@ namespace Polifloris.Data.Repositories
         public ProductRepository(AppDbContext context)
         {
             _context = context;
+        }
+
+        public IEnumerable<Product> Find(Expression<Func<Product, bool>> expression)
+        {
+            return _context.Products.Where(expression).ToList();
         }
 
         public Product GetProductById(int productId)

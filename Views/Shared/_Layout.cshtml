@@ -19,7 +19,10 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        @await Component.InvokeAsync("ShoppingCartSummary") 
+                        <li><a asp-controller="Home" asp-action="Index">Acasă</a></li>
+                        @await Component.InvokeAsync("CategoryMenu")
+                        <li><a asp-controller="Contact" asp-action="Index">Contactează-ne</a></li>
+                        @await Component.InvokeAsync("ShoppingCartSummary")
                     </ul>
                 </div>
             </div>

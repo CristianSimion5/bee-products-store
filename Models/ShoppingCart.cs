@@ -89,11 +89,11 @@ namespace Polifloris.Models
 
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
-            return ShoppingCartItems ??
-                (ShoppingCartItems = _context.ShoppingCartItems.Where(
+            return ShoppingCartItems ??= 
+                _context.ShoppingCartItems.Where(
                     c => c.ShoppingCartId == ShoppingCartId)
                     .Include(s => s.Product)
-                    .ToList());
+                    .ToList();
         }
 
         public void ClearCart()

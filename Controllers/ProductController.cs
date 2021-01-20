@@ -1,6 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Polifloris.Data.Interfaces;
+using Polifloris.Models;
 using Polifloris.ViewModels;
+using System;
+using System.Collections.Generic;
 
 namespace Polifloris.Controllers
 {
@@ -15,16 +18,38 @@ namespace Polifloris.Controllers
             _productRepository = productRepository;
         }
 
-        public IActionResult List()
+        public IActionResult List(string category)
         {
-            ViewBag.Name = "Toate produsele sunt afisate aici";
-            ProductListViewModel vm = new ProductListViewModel
+            string _category = category;
+            IEnumerable<Product> products;
+
+            string currentCategory = string.Empty;
+
+            if (string.IsNullOrEmpty(category))
             {
-                Products = _productRepository.GetProducts(),
-                CurrentCategory = "Miere"
+                products = _productRepository.GetProducts();
+                currentCategory = "Toate produsele";
+                ViewBag.Name = "Toate produsele sunt afisate aici";
+            }
+            else
+            {
+                products = _productRepository.Find(p => p.Category.CategoryName
+                    .Equals(_category));
+                
+                currentCategory = _category;
+                ViewBag.Name = string.Format(
+                    "Produsele din categoria {0:string} sunt afisate aici", 
+                    currentCategory);
+            }
+
+            
+            ProductListViewModel productListViewModel = new ProductListViewModel
+            {
+                Products = products,
+                CurrentCategory = currentCategory
             };
 
-            return View(vm);
+            return View(productListViewModel);
         }
     }
 }

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using Polifloris.Data.Interfaces;
 using Polifloris.Models;
 
@@ -14,6 +16,12 @@ namespace Polifloris.Data.Mocks
             _categoryRepository = categoryRepository;
 
         }
+
+        public IEnumerable<Product> Find(Expression<Func<Product, bool>> expression)
+        {
+            throw new NotImplementedException();
+        }
+
         public Product GetProductById(int productId)
         {
             return new Product { 

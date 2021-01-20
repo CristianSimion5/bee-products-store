@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Interfaces\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 

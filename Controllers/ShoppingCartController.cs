@@ -34,7 +34,7 @@ namespace Polifloris.Controllers
             return View(sCVM);
         }
 
-        public IActionResult AddToShoppingCart(int productId) //RedirectToActionResult
+        public IActionResult AddToShoppingCart(int productId)
         {
             var selectedProduct = _productRepository.GetProductById(productId);
             if (selectedProduct != null)

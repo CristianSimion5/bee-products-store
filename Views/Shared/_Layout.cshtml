@@ -2,12 +2,26 @@
 
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
+    <div class="container body-content">
         @RenderBody()
+        <hr />
+        <footer>
+            <p>
+                <a href="https://github.com/CristianSimion5/bee-products-store">
+                &copy; 2021 - Simion Cristian
+                </a>
+            </p>
+        </footer>
     </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

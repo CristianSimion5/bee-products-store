@@ -4,12 +4,21 @@
 
 <h2>@Model.CurrentCategory</h2>
 
-@{ 
-    foreach (var product in Model.Products)
-    {
-        <div>
-            <h4>Product name: @product.Name</h4>
-            <p>Price: @product.Price.ToString("c")</p>
-        </div>
+<div class="row">
+    @{foreach (var product in Model.Products)
+        {
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="figure">
+                    <img src="@product.ImageThumbnailUrl" alt="Thumbnail of a product" class="figure-img img-thumbnail" />
+                    <div class="figure-caption">
+                        <h3 class="float-right">@product.Price.ToString("c")</h3>
+                        <h3>
+                            <a href="#">@product.Name</a>
+                        </h3>
+                        <p>@product.ShortDescription</p>
+                    </div>
+                </div>
+            </div>
+        }
     }
-}
+</div>

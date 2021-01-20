@@ -22,7 +22,7 @@ namespace Polifloris.Data.Mocks
                 LongDescription = "Miere de salcam provenita din Romania",
                 Price = 20,
                 ImageUrl = "~/images/miere_salcam.jpg",
-                ImageThumbnailUrl = "~/thumbnails/miere_salcam_thn.jpg",
+                ImageThumbnailUrl = "/images/thumbnails/miere_salcam_thn.jpg",
                 InStock = false,
                 Category = _categoryRepository.GetCategories().ToList()[0],
             };
@@ -38,7 +38,7 @@ namespace Polifloris.Data.Mocks
                     LongDescription = "Miere de salcam provenita din Romania",
                     Price = 20,
                     ImageUrl = "~/images/miere_salcam.jpg",
-                    ImageThumbnailUrl = "~/thumbnails/miere_salcam_thn.jpg",
+                    ImageThumbnailUrl = "/images/thumbnails/miere_salcam_thn.jpg",
                     InStock = false,
                     Category = _categoryRepository.GetCategories().ToList()[0],
                 },
@@ -48,10 +48,30 @@ namespace Polifloris.Data.Mocks
                     LongDescription = "Miere poliflora provenita din Romania",
                     Price = 15,
                     ImageUrl = "~/images/miere_poliflora.jpg",
-                    ImageThumbnailUrl = "~/thumbnails/miere_poliflora_thn.jpg",
+                    ImageThumbnailUrl = "/images/thumbnails/miere_poliflora_thn.jpg",
                     InStock = true,
                     Category = _categoryRepository.GetCategories().ToList()[0],
                 },
+                new Product {
+                    Name = "Miere de salcâm",
+                    ShortDescription = "Miere de salcâm",
+                    LongDescription = "Miere de salcam provenita din Romania",
+                    Price = 20,
+                    ImageUrl = "~/images/miere_salcam.jpg",
+                    ImageThumbnailUrl = "/images/thumbnails/miere_salcam_thn.jpg",
+                    InStock = false,
+                    Category = _categoryRepository.GetCategories().ToList()[0],
+                },
+                new Product {
+                    Name = "Miere de salcâm",
+                    ShortDescription = "Miere de salcâm",
+                    LongDescription = "Miere de salcam provenita din Romania",
+                    Price = 20,
+                    ImageUrl = "~/images/miere_salcam.jpg",
+                    ImageThumbnailUrl = "/images/thumbnails/miere_salcam_thn.jpg",
+                    InStock = false,
+                    Category = _categoryRepository.GetCategories().ToList()[0],
+                }
             };
         }
     }

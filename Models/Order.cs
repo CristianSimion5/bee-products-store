@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+using Polifloris.CustomAttributes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -39,6 +40,7 @@ namespace Polifloris.Models
 
         [Display(Name = "Număr telefon", Prompt = "07xxxxxxxx")]
         [StringLength(12, MinimumLength = 10, ErrorMessage = "Numărul de telefon este prea scurt")]
+        [PhoneNumber]
         [Required(ErrorMessage = "Vă rugăm să vă introduceți numărul de telefon")]
         [DataType(DataType.PhoneNumber)]
         public string PhoneNumber { get; set; }

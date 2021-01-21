@@ -4,8 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Polifloris.Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Polifloris.Models
 {
@@ -18,6 +18,7 @@ namespace Polifloris.Models
             _context = context;
         }
 
+        [Key]
         public string ShoppingCartId { get; set; }
         public List<ShoppingCartItem> ShoppingCartItems { get; set; }
 

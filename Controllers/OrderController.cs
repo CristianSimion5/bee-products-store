@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Polifloris.Data.Interfaces;
 using Polifloris.Models;
 using System;
@@ -19,6 +20,7 @@ namespace Polifloris.Controllers
             _shoppingCart = shoppingCart;
         }
 
+        [Authorize]
         public IActionResult Checkout()
         {
             return View();

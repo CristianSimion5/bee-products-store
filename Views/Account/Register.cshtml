@@ -1,4 +1,4 @@
-﻿@model LoginViewModel
+﻿@model RegisterViewModel
 
 <div class="row loginForm">
     <div class="col-md-8 offset-md-2">
@@ -6,6 +6,7 @@
         <form asp-controller="Account" asp-action="Register" method="post" role="form">
             <h4>Creează un cont pentru a putea comanda</h4>
             <hr />
+            <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Username" class="col-md-2"></label>
                 <div class="col-md-10">
@@ -19,6 +20,14 @@
                 <div class="col-md-10">
                     <input asp-for="Password" class="form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="col-md-2"></label>
+                <div class="col-md-10">
+                    <input asp-for="ConfirmPassword" class="form-control" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                 </div>
             </div>
 

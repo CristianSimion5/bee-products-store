@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Polifloris.ViewModels;
 using System;
@@ -45,6 +46,8 @@ namespace Polifloris.Controllers
                     {
                         return RedirectToAction("Index", "Home");
                     }
+
+                    return Redirect(loginViewModel.ReturnUrl);
                 }
             }
 
@@ -59,24 +62,30 @@ namespace Polifloris.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Register(LoginViewModel loginViewModel)
+        public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
             if (ModelState.IsValid)
             {
-                var user = new IdentityUser() { UserName = loginViewModel.Username };
-                var result = await _userManager.CreateAsync(user, loginViewModel.Password);
+                var user = new IdentityUser() { UserName = registerViewModel.Username };
+                var result = await _userManager.CreateAsync(user, registerViewModel.Password);
 
                 if (result.Succeeded)
                 {
                     return RedirectToAction("Index", "Home");
                 }
+
+                foreach (var error in result.Errors)
+                {
+                    ModelState.TryAddModelError(error.Code, error.Description);
+                }
             }
 
-            return View(loginViewModel);
+            return View(registerViewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

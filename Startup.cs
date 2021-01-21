@@ -61,6 +61,11 @@ namespace Polifloris
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler("/Error");
+                app.UseHsts();
+            }
 
             app.UseStatusCodePages();
             app.UseStaticFiles();

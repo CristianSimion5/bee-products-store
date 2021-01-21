@@ -19,9 +19,9 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li><a asp-controller="Home" asp-action="Index">Acasă</a></li>
+                        <li class="nav-item"><a asp-controller="Home" asp-action="Index">Acasă</a></li>
                         @await Component.InvokeAsync("CategoryMenu")
-                        <li><a asp-controller="Contact" asp-action="Index">Contactează-ne</a></li>
+                        <li class="nav-item"><a asp-controller="Contact" asp-action="Index">Contactează-ne</a></li>
                         @await Component.InvokeAsync("ShoppingCartSummary")
                         @await Html.PartialAsync("LoginPartial"); 
                     </ul>

@@ -1,29 +1,29 @@
 ﻿@model LoginViewModel
 
-<div class="row loginForm">
-    <div class="col-md-8 offset-md-2">
-        <h2>Log in</h2>
+<div class="loginForm">
+    <div class="col-md-8 mx-auto">
         <form asp-controller="Account" asp-action="Login" method="post" role="form">
+            <h2 class="col-md-10">Log in</h2>
             <div asp-validation-summary="All" class="text-danger"></div>
             <input type="hidden" asp-for="ReturnUrl" />
-            <div class="form-group">
-                <label asp-for="Username" class="col-md-2"></label>
-                <div class="col-md-10">
+            <div class="form-group col-md-10">
+                <label asp-for="Username"></label>
+                <div>
                     <input asp-for="Username" class="form-control" />
                     <span asp-validation-for="Username" class="text-danger"></span>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label asp-for="Password" class="col-md-2"></label>
-                <div class="col-md-10">
+            <div class="form-group col-md-10" >
+                <label asp-for="Password"></label>
+                <div>
                     <input asp-for="Password" class="form-control" />
                     <span asp-validation-for="Password" class="text-danger"></span>
                 </div>
             </div>
 
-            <div class="form-group float-right formPullRightButton">
-                <div class="offset-md-2 col-md-10">
+            <div class="form-group ml-0 formPullRightButton">
+                <div class="col-md-10">
                     <input type="submit" class="btn btn-success" value="Log in" />
                 </div>
             </div>

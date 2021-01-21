@@ -7,19 +7,41 @@
 {
     if (User.IsInRole("Administrator"))
     {
-        <li class="nav-item"><a asp-controller="Administration" asp-action="ListRoles">Roluri</a></li>
+        <li class="nav-item">
+            <a asp-controller="Administration" asp-action="ListRoles"
+               class="nav-link text-warning">
+                Roluri
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Categories" asp-action="Index"
+               class="nav-link text-warning">
+                Categorii
+            </a>
+        </li>
+        <li class="nav-item">
+            <a asp-controller="Products" asp-action="Index"
+               class="nav-link text-warning">
+                Produse
+            </a>
+        </li>
     }
     <form asp-area="" asp-controller="Account" asp-action="Logout" id="logoutForm"
           method="post" class="ml-auto">
         <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item"><a href="javascript:document.getElementById('logoutForm').submit()">Log out</a></li>
+            <li class="nav-item">
+                <a href="javascript:document.getElementById('logoutForm').submit()"
+                   class="nav-link">
+                    Log out
+                </a>
+            </li>
         </ul>
     </form>
 }
 else
 {
     <ul class="nav navbar-nav ml-auto">
-        <li class="nav-item"><a id="registerLink" asp-controller="Account" asp-action="Register">Înregistrare</a></li>
-        <li class="nav-item"><a id="loginLink" asp-controller="Account" asp-action="Login">Log in</a></li>
+        <li class="nav-item"><a id="registerLink" asp-controller="Account" asp-action="Register" class="nav-link">Înregistrare</a></li>
+        <li class="nav-item"><a id="loginLink" asp-controller="Account" asp-action="Login" class="nav-link">Log in</a></li>
     </ul>
 }

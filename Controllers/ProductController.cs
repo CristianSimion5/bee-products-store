@@ -28,7 +28,6 @@ namespace Polifloris.Controllers
             {
                 products = _productRepository.GetProducts();
                 currentCategory = "Toate produsele";
-                ViewBag.Name = "Toate produsele sunt afisate aici";
             }
             else
             {
@@ -36,9 +35,6 @@ namespace Polifloris.Controllers
                     .Equals(_category));
                 
                 currentCategory = _category;
-                ViewBag.Name = string.Format(
-                    "Produsele din categoria {0:string} sunt afisate aici", 
-                    currentCategory);
             }
 
             

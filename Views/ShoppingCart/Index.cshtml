@@ -1,8 +1,7 @@
 ﻿@model ShoppingCartViewModel
 
-<div class="row checkoutForm">
+<div class="checkoutForm">
     <h2>Coșul tău de cumpărături</h2>
-    <h4>Aici sunt produsele tale din coș</h4>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
@@ -42,18 +41,8 @@
     </table>
 
     <div class="text-right">
-        <div class="btn-group ">
+        <div class="btn-group">
             <a class="btn btn-success" asp-controller="Order" asp-action="Checkout">Check out</a>
-            <a class="btn-group">
-                <a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    Adaugă mai multe produse<span class="caret"></span>
-                </a>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a asp-controller="Product" asp-action="List" asp-route-category="Miere">Miere</a></li>
-                    <li><a asp-controller="Product" asp-action="List" asp-route-category="Ceara">Ceară</a></li>
-                    <li><a asp-controller="Product" asp-action="List" asp-route-category="Propolis">Propolis</a></li>
-                </ul>
-            </a>
         </div>
     </div>
 </div>

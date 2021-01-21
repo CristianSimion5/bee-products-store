@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Polifloris.Models;
 using Polifloris.ViewModels;
 using System.Threading.Tasks;
 
@@ -10,12 +11,14 @@ namespace Polifloris.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly ShoppingCart _shoppingCart;
 
         public AccountController(UserManager<IdentityUser> userManager, 
-            SignInManager<IdentityUser> signInManager)
+            SignInManager<IdentityUser> signInManager, ShoppingCart shoppingCart)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _shoppingCart = shoppingCart;
         }
 
         public IActionResult Login(string returnUrl)
@@ -85,6 +88,7 @@ namespace Polifloris.Controllers
         [Authorize]
         public async Task<IActionResult> Logout()
         {
+            _shoppingCart.ClearCart();
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }

@@ -34,6 +34,7 @@ namespace Polifloris
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddIdentity<IdentityUser, IdentityRole>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();

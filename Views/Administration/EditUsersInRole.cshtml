@@ -1,0 +1,33 @@
+﻿@model List<UserRoleViewModel>
+
+@{ 
+    var roleId = ViewBag.roleId;
+}
+
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            <h2>Adaugă sau elimină utilizatori din acest rol</h2>
+        </div>
+        <div class="card-body">
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <div class="form-check m-1">
+                    <input type="hidden" asp-for="@Model[i].UserId" />
+                    <input type="hidden" asp-for="@Model[i].UserName" />
+                    <input asp-for="@Model[i].IsSelected" class="form-check-input"/>
+                    <label class="form-check-label" asp-for="@Model[i].IsSelected">
+                        @Model[i].UserName
+                    </label>
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Modifică" class="btn btn-primary" />
+            <a asp-controller="Administration" asp-action="DetailsRole" 
+               asp-route-id="@roleId" class="btn btn-primary">
+                Anulează
+            </a>
+        </div>
+    </div>
+</form>

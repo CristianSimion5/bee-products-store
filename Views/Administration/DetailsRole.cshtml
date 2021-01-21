@@ -1,0 +1,47 @@
+﻿@model DetailsRoleViewModel
+
+@{ 
+    ViewBag.Title = "Detaliile rolului";
+}
+
+<h1>Detaliile rolului</h1>
+
+<div class="card mb-3">
+    <div class="card-header">
+        Id-ul rolului: @Model.Id
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">@Model.RoleName</h5>
+    </div>
+    <div class="card-footer">
+        <a class="btn btn-primary col-2" asp-controller="Administration"
+           asp-action="ListRoles">
+            Înapoi
+        </a>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Utilizatori în acest rol:</h3>
+        </div>
+        <div class="card-body">
+            @if (Model.Users.Any())
+            {
+                foreach (var user in Model.Users)
+                {
+                    <h5>@user</h5>
+                }
+            }
+            else
+            {
+                <h5>Niciun utilizator în acest rol</h5>
+            }
+        </div>
+        <div class="card-footer">
+            <a asp-controller="Administration" asp-action="EditUsersInRole"
+                asp-route-roleId="@Model.Id" class="btn btn-primary">
+                Modifică utilizatori
+            </a>
+        </div>
+    </div>
+</div>
